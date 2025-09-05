@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PWA y Mobile Optimizations */
+@supports (padding: max(0px)) {
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  .pt-safe {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  .pl-safe {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+  .pr-safe {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Touch optimizations */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scrolling para iOS */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix para iOS viewport height */
+.min-h-screen-mobile {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Animaciones personalizadas para notificaciones */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-slide-out-right {
+  animation: slideOutRight 0.3s ease-in forwards;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.6s ease-out forwards;
+}
+
+/* Efecto de celebración para badges */
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@layer base {
+  * {
+    @apply border-bg-300;
+  }
+  body {
+    @apply bg-bg-100 text-text-100 font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-100 hover:bg-accent-200 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-bg-200 hover:bg-bg-300 text-text-100 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-bg-300 p-6;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-bg-300 rounded-lg focus:ring-2 focus:ring-accent-100 focus:border-transparent;
+  }
+
+  /* Animaciones */
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-abierta {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .status-revision {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .status-codir {
+    @apply bg-purple-100 text-purple-800;
+  }
+
+  .status-aprobada {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .status-progreso {
+    @apply bg-indigo-100 text-indigo-800;
+  }
+
+  .status-implementada {
+    @apply bg-emerald-100 text-emerald-800;
+  }
+
+  .status-rechazada {
+    @apply bg-red-100 text-red-800;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Estilos para el Kanban */
+.kanban-column {
+  @apply bg-bg-200 rounded-lg p-4 min-h-96;
+}
+
+.kanban-card {
+  @apply bg-white rounded-lg shadow-sm border border-bg-300 p-4 mb-3 cursor-move hover:shadow-md transition-shadow duration-200;
+}
+
+.kanban-card:hover {
+  @apply shadow-lg;
+}
+
+/* Estilos para badges/insignias */
+.badge-earned {
+  @apply text-yellow-500;
+}
+
+.badge-not-earned {
+  @apply text-gray-300;
+}

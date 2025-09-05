@@ -1,0 +1,65 @@
+{
+  "name": "Inspira - Plataforma de Innovación CL Grupo Industrial",
+  "short_name": "Inspira CL",
+  "description": "Plataforma de gestión e innovación para empleados de CL Grupo Industrial",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1426",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/logo_inspira2.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo_inspira2.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Crear Nueva Idea",
+      "short_name": "Nueva Idea",
+      "description": "Envía una nueva idea de innovación",
+      "url": "/mis-ideas?action=create",
+      "icons": [
+        {
+          "src": "/logo_inspira2.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Ver Mis Ideas",
+      "short_name": "Mis Ideas",
+      "description": "Revisa el estado de tus ideas",
+      "url": "/mis-ideas",
+      "icons": [
+        {
+          "src": "/logo_inspira2.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Panel",
+      "description": "Ve el resumen de innovación",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/logo_inspira2.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

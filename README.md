@@ -256,4 +256,4 @@ Para soporte técnico o preguntas sobre el desarrollo:
 
 **Inspira** - Donde las ideas se convierten en innovación 🚀
 
-*Desarrollado con ❤️ y GitHub Copilot para CL Grupo Industrial*
+*Desarrollado por CL Grupo Industrial*
